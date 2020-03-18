@@ -6,7 +6,6 @@ import Deliverymen from '../pages/Deliverymen';
 import Problems from '../pages/Problems';
 import Recipients from '../pages/Recipients';
 import SignIn from '../pages/SignIn';
-// import Route from './Route';
 
 export default function Routes() {
   return (

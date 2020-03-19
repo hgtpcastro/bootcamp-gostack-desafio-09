@@ -35,6 +35,13 @@ export const Content = styled.div`
       border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
+    span {
+      color: red;
+      align-self: flex-start;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
     button {
       margin: 5px 0 0;
       height: 44px;

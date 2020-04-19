@@ -33,6 +33,9 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     'react/jsx-props-no-spreading': 'off',
+    'react/button-has-type': 'off',
+    'react/prop-types': 'off',
+    'consistent-return': 'off'
   },
   settings: {
     'import/resolver': {

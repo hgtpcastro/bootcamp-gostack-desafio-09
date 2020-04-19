@@ -5,57 +5,37 @@ export const Wrapper = styled.div`
   height: 100%;
   background: #7d40e7;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Content = styled.div`
+  background: #fff;
+  padding: 30px 30px 55px;
   width: 100%;
   max-width: 360px;
-  text-align: center;
-  background: #fff;
   border-radius: 4px;
-  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   img {
-    width: 100%;
-    height: 100%;
+    margin-bottom: 25px;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
+  button {
+    background: #7d40e7;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    border: 0;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background ease-out 300ms;
 
-    input {
-      border-radius: 4px;
-      height: 44px;
-      padding: 0 15px;
-      margin-bottom: 15px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    span {
-      color: red;
-      align-self: flex-start;
-      margin: 0 0 10px;
-      font-weight: bold;
-    }
-
-    button {
-      margin: 5px 0 0;
-      height: 44px;
-      background: #7d40e7;
-      font-weight: bold;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.05, '#7d40e7')};
-      }
+    &:hover {
+      background: ${darken(0.03, '#7d40e7')};
     }
   }
 `;

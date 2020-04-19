@@ -1,10 +1,35 @@
+import produce from 'immer';
+
 const INITIAL_STATE = {
-  token: 123,
+  token: null,
+  loggedIn: false,
+  loading: false,
 };
 
 export default function auth(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
+  return produce(state, draft => {
+    switch (action.type) {
+      case '@auth/LOGIN_REQUEST': {
+        draft.loading = true;
+        break;
+      }
+      case '@auth/LOGIN_SUCCESS': {
+        draft.token = action.payload.token;
+        draft.loggedIn = true;
+        draft.loading = false;
+        break;
+      }
+      case '@auth/LOGIN_FAILURE': {
+        draft.loading = false;
+        break;
+      }
+      case '@auth/LOGOUT': {
+        draft.token = null;
+        draft.loggedIn = false;
+        break;
+      }
+      default:
+        return state;
+    }
+  });
 }

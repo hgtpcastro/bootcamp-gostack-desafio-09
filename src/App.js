@@ -1,28 +1,36 @@
 import React from 'react';
+import { ToastContainer, Slide } from 'react-toastify';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 
 import './config/ReactotronConfig';
 
-import history from './services/history';
-import Routes from './routes';
-
-/**
- * Tem q vir depois da importação do reactotron
- */
-import store from './store';
-
 import GlobalStyle from './styles/global';
 
-function App() {
+import Routes from './routes';
+import history from './services/history';
+
+import Overlay from '~/components/Overlay';
+
+import { store, persistor } from './store';
+
+export default function App() {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        <Routes />
-        <GlobalStyle />
-      </Router>
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes />
+          <GlobalStyle />
+          <Overlay />
+          <ToastContainer
+            transition={Slide}
+            autoClose={2000}
+            hideProgressBar={false}
+            position="top-center"
+          />
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }
-
-export default App;

@@ -1,11 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
   * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     outline: 0;
     box-sizing: border-box;
   }
@@ -38,5 +40,12 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-}
+
+  .Toastify__toast {
+    border-radius: 4px;
+    padding: 10px 20px;
+    font: 14px 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
 `;

@@ -1,8 +1,11 @@
+// Imports
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// UI Imports
 import { Wrapper, Content } from './styles';
 
+// Component
 export default function AuthLayout({ children }) {
   return (
     <Wrapper>
@@ -11,6 +14,7 @@ export default function AuthLayout({ children }) {
   );
 }
 
+// Constraints
 AuthLayout.propTypes = {
   children: PropTypes.element.isRequired,
 };
